@@ -1,0 +1,145 @@
+{% extends 'shoppersapp/base.html' %}
+{% block content %}
+<div class="navigation" >
+  <nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'index'  %}" style="font-family: 'Lobster';">Save money through price Comparison</a>
+  </div>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav" style="font-size:25px;">
+          <li ><a href="{% url 'mobiles_page'  %}" data-toggle="tooltip" data-placement="bottom" title="mobile"><i class="fa fa-mobile"></i></a></a></li>
+          <li><a href="{% url 'motorcycles_page'  %}" data-toggle="tooltip" data-placement="bottom" title="motorcycle"><i class="fa fa-motorcycle"></i></a></li>
+          <li><a href="{% url 'laptops_page'  %}" data-toggle="tooltip" data-placement="bottom" title="laptop"><i class="fa fa-laptop"></i></a></li>
+          <li><a href="{% url 'cars_page'  %}" data-toggle="tooltip" data-placement="bottom" title="car"><i class="fa fa-car"></i></a></li>
+      </ul>
+
+ </div>
+</form>
+      </div>
+  </div>
+</nav>
+
+</div>
+
+
+
+
+<div class="container" style="margin-top: 1cm;">
+{% for cars in cars %}
+   <div class="well">
+      <div class="media">
+  		<a class="pull-left" href="#">
+    		<img class="media-object" width="140" height="180"  src="{{ cars.image }}">
+  		</a>
+
+    		<h4 class="media-heading">{{ cars.title }}</h4>
+          <br><br><div class="media-body">
+            <tr itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="32" data-id="959632" data-last-update="6/18/2016 9:40:09 AM">
+
+                                                 <table>
+                                                   <tr>
+                                                       <td>
+                                                    <img width="120" height="60" data-original='https://cdn.zeebiz.com/sites/default/files/2019/07/12/94515-car-dekho.jpg' class="lazy" alt="CarDekho" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxIPEBANDw8QDQ8QEBAWEA8PDQ8PEBYQFhUZGBcXFRUYHSggGBslGxUWIjEiJSkrMC8uFyA1ODMtNygtLisBCgoKDg0OGxAQFzclICMtLS0tNy0tLy0rLS0rLy0tLy0tLSstLS0tKyswLS8tLS0tLS0tLS0vLS0tLS0tLS0tLf/AABEIAOEA4QMBEQACEQEDEQH/xAAbAAEBAAIDAQAAAAAAAAAAAAAAAQUGAwQHAv/EAEoQAAEDAgIDCwYJCwQDAAAAAAEAAgMEEQUhBhIxExYiQVFUYXGBk9IHMpGhsdEUI0JSU3OSlLIVFzM0NVVicoKiwSSjwvGDs/D/xAAaAQEAAgMBAAAAAAAAAAAAAAAAAQQCAwUG/8QAOREAAQMCAQgJBAMAAQUBAAAAAAECAwQRBRIVITFBUpGhExRRYXGx0eHwMlOBwSIzNJJCcoKy8TX/2gAMAwEAAhEDEQA/APbKmobEx0kjgxjRdzjsAWLnI1Mpy6DNjHPcjWpdVNDxnTGWQllP8TH863xh6f4Vxp8Qe5bR6E5noqbCo2JeXSvL3Nblmc86z3ueTxucXH1rnuc5y3VTptY1qWalj5WJIUAqEBAVQCoAgCEBAEAQBAEAQBAEJIgCAikBCSIApBWSFpu1xaeVpIPqUoqpqCoi6FQz2E6WzwkCQ7vHxh3ngdDver0NfIxbO0pzOdUYZDKl2/xXlwN/w+vjqIxLE7Waewg8YI4iu1HK2RuU1Tzk0L4X5D00nZWw1HnunWLGSX4M0/FxW1rHbJ09XvXExCdXP6NNSeZ6XCqVGR9KqaV8vc1dc46xVBBQgKhAUAqEBAVAEAQBQAhAQBAEAQkKQEAQEQBCSIApBChJEBFJJm9E8WNNO1pPxUpDZBfIHYHdh9SuUU6xSW2LrKGIUqTRKqfUmlPQ9OuvQHk7HjNRKXvfIcy9znHrJuvKudlOVV2nuWNRrUamxD4WJkVCAoBUBVBAQFQgIAgKgCAIAgCAIAgCAiAIAhJEAQEKkkiAikBCSKQbDvpl+cfUrvXX9pzc2x9hrqpHTKoBUICEFUAqAqEBQAgKhAQBAEAQBAEAQBAEBEJCAKQRCSICKQEJIhJFICAIAoBUIKgCEFUAqAICqCAgCAqAIQEAQBAEJIgCAICKSQgIgIpAQkiAikkICISEICAqAoUEFQBAVQQEBUAQFUEBAEAQBAEAQBARSSEBEAQEUkhARARSSRAEBFJIQBQQVAVALqAW6EFUAICoQEAUAqAIAgCAICIAgCkBARCQgJdSCXQkKQRARCQpAQEQkXUEFQFQgKAVALoQW6AIC3QgXUAIAgCAIAgCAXQC6kEQkXQEugCEkQBSCISS6AKSRdARAVAFBBUB2cOoJal5jgjMjhbWzDWNB2F7js9uWQK3QwPlWzUNE9THA28i+qmy02gMxAMtTFGeNscbpAP6nEX9AV9uGbzjkvxpt/4M4r88zsfm/POz3A8SzzYzeU157ducx+b887PcDxJmxm8oz07c5jeAednuB4kzYzeUZ6duczEaQ6PtomtJqDK954Me5BuQ2km+xVKuljgalnaVLtFWvqXL/CyIYNUTpGcwfRp9RH8JklZTU+dnuGs5wBsTY2DW8hzv7b8FFls6R62Q5tTiKRydFG3Kcdve3S/vNn2Y/etvVKb7nNDR16q+z5je3S/vNn2Y/enVKb7nNB16q+z5je3S/vNn2Y/enVKb7nNB16q+z5je3S/vNn2Y/enVKb7nNB16q+z5nBiWizo4jUwTsq4Wgl9m6rg0bSLEh1uMZduxYS0KIzLiddDZBiWVJ0crMlVNfXNOqZPAMKbVyGEzGB9rsG5h4dbaNozG1W6WFkzsly2XYU62pfTsR7W3Tb3GwbwDzs9wPEr+bGbynMz07c5j83552e4HiTNjN5Rnp25zH5vzzs9wPEmbGbyjPbtzmcc3k/ktwKppPI+AgekOUOwxNjjJuN70fM1zFcFqKS3wiMBpNhLG4viJOwaxAIPWB2qjPSSRaV1HUpq2Go0MXT2LrOgqxbIgCkkiAiAIAgKgOehpXTyxwM8+RwA6OMnqABPYs4o1kejE2mqaVIo1e7Uh6zRUsNDT6oIZHG0ue920m3Cc7lJ/6XomtZDHbUiHjpHyVMt10qvyxq9Xp9wiIYNZvE6R5aT2AZLnPxPT/BvE68eCaP5v09yHBv8Apebxd4/3LDOb9xOPsbMyR768Bv8Apebx94/3JnN+4nH2IzLHvrwG/wCl5vH3j/cmc37icfYZlj314GuYriL6mV08lrmwDRsa0bAP/uNUZpXSvy3HUp4GwRoxpy4FhbqudsIybtlcOKMHO3Sdg6+hZ0sCzSW2bfneaqypSniV23Z4+xsOneJtGpQRWayMNMgGwWHAZ6LH0K5iMyaIm7Nf6Q5+E066Z3611ftf1xNOXLO2VAEBEBtegeLbnIaV54Ex4F9gk5O0esdK6OHz5LujXUurx9zj4tS5bOlbrbr8PYxmlOEGknLWj4mS7ojyDjb2E+ghaq2n6J901KWcPquni0/Umv1MVBM6NzZGHVexwLTyEKo1ytVHJrQuvYj2q12pT0+lx4S0T6xgBfHE8vjvkJGtuR1f4K9AyqR0CyJrRNPih5SSiVlSkK6lVLL3Ka3v+l5vH3j/AHKjnN+4nH2OnmWPfXgN/wBLzeLvH+5M5v3E4+xOZI99eB9w6fvvw6Zurx6kpv6wpbibr6WczF2CNt/F/FDbaGrhroNZoEkTwWvY8elrgunHIyZl01HGmhkppMldCp8uh5jpFhRo53Q5lhAdE52ZLDxE8ZBBHo5VwqqHopLJqXSh6qhqesRI5depfneYxVy4RAEAQEuhIQFuhBuHk4og6WWoIvubQ1p5HO2+oetdPDY7uV/ZoOJjUtmNjTbp4GT8otbqQxwA5yvJP8jLE+stW3EpLMRnb+irg0OVKsi/9Kc1+KeerjHpC3QBAEBbqCD1DQ/B/gtOHOFppgHSZZjLgs7AT2kr0VJB0UenWuv53HksQqunl0fSmhPX8nSn0Gikc6R9RUOc9xLiTFtP9CwdQROVVW917zazFpWNRqNSyfO0494EH09R6YvAsc3Q9/EyzzP2J8/I3gQfT1Hpi8CZuh7+IzzP2J8/I3gQfT1Hpi8CZuh7+IzzP2J8/I3gQfT1Hpi8CZuh7+IzzP2J8/JW6BQggioqQQQQQYrgjMEcBSmHxJp08QuMTKllanz8mY0hwgVVOYSbyNGtE82vugG09eYPWt88KSxq1filOkqVglR6atvgeTkEXBBaQSC0ixBG0HpXm1RUWynskVFS6Hcw/EXQtmYM2TxPY9t+MghrusE+srZHKrEcianJY0zQNlVrl1tVFT9p+TpXWs3i6AiA27yc1urNJTk8GRms3P5bSAfSD/aulhslnqztS/A42NQ3jbJ2Lb8L85mV8otHrU7JwM4ngE/wPy/FqqziMd4srs/ZTwaXJmVm8nNNPqed3XFPTEQkXQEQBALoCoD1HQSj3KjY75UznSHtyb/a0Lv0LMiFO/SeRxWXpKle7R8/JqWn1ZulWWA3ELGt/qPCPtHoXNr35Utuw7WERZFPlby3/Rrl1SOmFAF0ILdAZfROiFRVxMIuxpL3joZs/uLVao48uZEXZp4FLEZVip3KmtdHH2ueqzTtZm97WA7C5wb7V6BXImtTyLWOd9KXPhlbE4holjcTsAkaSey6hHtXaZLFIiXVq8DnWRrCAIAgOB9bE0lrpY2kbQZGgjsusVe1NpsSKRUujV4H3DO1+bHteBt1XB3sUo5F1KYuY5v1JY8107ohDVlwFmzMD/6rkO9gPauHiEeTLdNqHqMJlV8Fl/6Vt+Nhrt1ROmRAFJIugO/gNbuFTDLewa8B38rsj6itsEnRyNd3leri6WFzO49Wxmk3enmhPy43AfzWy9dl6GVmWxWrtPH08vRStf2KeM9eR4+teZ8T3PgS6AIAgIgCAuqTwRtOQ6zkEtfQL20qe308IjY2NuxjWtHUBZepRLJZDwTnK5yuXaeL185kmlkdtfLI49ZccuzZ2LzMiqr3Kvap7mFqNja1NiJ5HCsDYLoQLoC3UA2byefrh+ok/ExXsO/u/C/o5WM/5/8AyTyU2nSfRj4c+OQTGIsaW2Me6NIJvcC4sfblyLpVFI2dUVy6jjUWIOpmq1G3uYdnk8zF6vK4vq04a63QS82PTZV0wuPtXkXVxx9vo5m9LpnCCAICEIDR5fJ7dziKvIuJGtThzrE8ZDxc9NguauGRqt7qdxuNvRETI5mW0Y0W+AyPlM5lL2athHubQL3uRc3OXZnyrfT0bYFVUXWVK3EXVLUarbW0mC8pf6an+rk/EFSxP6m+C/o6WCf1v8U/Zp11zDtkupAugF0JPl2eShQh7PgtQZaaCV3nPiYT122r08TlcxFXsPD1LEZM5qakVTynSKn3KrqYxkBK4gdD+GPxLz9S3Jmcnf56T19E/Lp2O7vLR+jHLSWQgIgF0JF0IK15BDhtaQR1g3TVpCpdLKe1YbXMqImzRODmuHEcweMHkIXp45GyNRzTws0L4Xqx6aUMbXaJUcz3SOh1XuJLjG98Ws47SQ0gEnlWt9NE5bq03x4hURpktfo4nX3j0X0cn3mbxLHqcO6bM6VW9yQbx6L5kn3mbxJ1OHdGdKre5IN49F9HJ95m8SdTh3RnSq3uSHm1bGGSyMb5rZHgXN8g4gZrgSJZ6onap6uFVdG1V2ohsPk7/XD9RJ+Jit4d/d+F/RzcZ/z/APknkp6Yu6eWNF0r0nqKaqdDE5gY1rDYxhxuRc5rlVdXLHLkttY79Bh8M0CPei3uu0xG/as+fH3I96rZwn7uHuXM0U3YvEu/as+fH3I96Zwn7uHuM0U3YvEb9qz58fcj3pnCfu4e4zRTdi8Sb9qz58fcj3pnCfu4e4zRTdi8TIYBpZVTVUMMjoyx7yHWjDTbVJ236Fup62V8rWutZe4r1eGwRwOe1FuneegrsHnDz7ymH46n+rk/EFx8T+tvgv6PR4H/AFv8U/ZphK5i6juHpNDoZRvije5kms5jCf8AUTDMi54132UkKtRck8pLidS16ojtq7EOfePRfMk+8zeJZ9Th3TXnSq3uSDePRfRyfeZvEnU4d0Z0qt7kh9xaFUTTcwmT+GSaV7D1tJse1SlLCi3ySHYnVKlsvgZ572xtLiQxjRmTZrQ0ewLeqoiXUpIiuWyaVU8cx6tFRVTzt817+D0taA0HtDb9q83O9JJXOTae1pIVigaxdaJ7nQWosi6AiAIAgCA7NHXywEuhlfETt1HEA9Y2FZskez6VsapIY5Us9qL4mRGldcMvhTu6gPtYt3XZ97knoVs20n2+a+o32V3Ond1T+BOuz73JPQZspPt83epd9ldzp3dU/gU9dn3uSegzZSfb5u9RvsrudO7qn8Cddn3uSehGbaT7fN3qYiSQucXuN3OJLjkLk5k5Kqqqq3UutajURE1IfdLUvieJI3mN7djmmxClrnNXKatlMZI2yNyXpdDJ76a3nT/sQ+Fb+uT7/l6FXN1L9tOK+pi6id0jnSSOL3uN3OcbklaHOVy3VdJbYxrGo1qWRDjUGQQBAEB9RvLSHNJa5pBaQbEEbCERVRboQrUVLKZYaUVvOn/Yi8Ksdcn3/L0KebqX7ac/Ux1bWyTu3SaR0r7W1nW2cgAyC0vkc9buW6lmKJkTcliWQ4FgbDLx6UVrQGtqXBrQABuUGQGzaxWkrJkS2VyT0Ka4dSuW6x819T632V3Ond1T+BT12fe5J6EZspPt83eo32V3Ond1T+BR12fe5J6DNlJ9vm71JvsrudO7qn8Cddn3uSegzZSfb5r6nSrsVnnFpp5JR80us37IyWp80j/qdc3xU0MWljEQ6V1rN4QBAEB8oCoAgCAqAIAgCEFQBAEAQBAEAQBAEAQBAEBEAQkIAgIgCAICIAgCEhCAgCAqEhCAgCAIAgPuKNz3BjGue53mta0ucT0AbVKIqrZEIc5Gpdy2Q7f5HqeaVP3aX3LPoZNxeCmnrUH3G/8AJPUfkep5pU/dpfcnQybi8FHWoPuN/wCSepHYTUgXNLUAcpppbexOhk3F4KEqYF1SJxT1OmRbI5EbQcitZuCEhAEBEAQBAEAQBCSIQEAQkIAgIgMpo3g5rZxDrajQC57rXIaOTpN1vp4FmfklStqkposu111IZ+egwiNxjfPMXMJDrF7hcbcw2ytujo2rZXLzOcybEnplIxLL4epxmDBvpp/93wrHIou1eZll4nupy9TVapzC9xiaWR3Oo1ztZwbxXPKqLsm65KaDrxo5GplrddpsuiOjTKpj6ioc5kIOqwtcG3dexNyNl8utXKSlbIiufq2HMxDEHQOSOJLu1qYvSXCDR1DocywjWiceNh4ieUHL0cq0VMPQvydmwtUNUlREj9upfE59D8JjrJ3RS6waIy4ajg03BA5OlZ0kLZXq13Ya8RqX08SPZrvtMtLh+ENc5jqiYOaSCLu2g2PyFYWKjRbK5Sm2fEnIioxNPztOSkwPDKl2409TLupBLQTyC5yLRdSynpZFyWO0mMlZXQplyRpb53mGwOlMGJxQONzHUFpI2GwOfaM1WgYrKlGrsUvVUiSUTnptbc3XS3SV9C+JjI2Sbo1xJc4i1iBxda6VXVuhVERL3OFh+HtqmuVzrWMB+cObm8X23qpnN+6nE6OY499eCH3D5RH6w3SnZqXGtqvdrW47XCyTE3X/AJN0eJi7A2W/i/T4Hb8omHMfAyuYAHhzA5wy1o3jK/SDq+krPEImqxJE1/o1YPO9sqwOXRpt3Kh1I9H6GOlgqamSaPdWtzDrjWIvkA02WCU1O2Nr3qqXNq1tW+Z8cTUWy/Npw/A8H5zN/d4FjkUe8vz8GzpcS3E+fk61LhVHPXRU8EkkkDo3Fzr2drgE2BI6BxLBsML5kYxdFjY+pqYqV0kiIjkX8W4mHxmiEVVLTRBzg2TVYPOechlltOarTRo2VWN7S7TSrJA2R+1Lr2GwYfoiyKI1OIy/B2W4MbXDX/qNtv8ACLq3HRI1uXMtkOdNibnv6OlblL27PnepiqSmpqishghbKyB7y0l7wZCLE3yFm7OlaGNikma1qLZeJckknhp3SPVFcibE0e5waS0DKaqkgj1ixmrbWNzm0Hb2rGpjbHIrWmdFM6aBHu1qY2MXIHKQPWtKaVLSrZLm145osxlVTUlO5w3dri50h1rWOZyA4rq9PSIkrWM2nIpcRc6B8sqfT2HYrMJwqncYZp5jK3z9UuNj06rbBZvhpI1yXOW/zsNUdTiEzctjEsur4qnCKfBvppx0ndPCscmi3l5meXie6nL1OhpVgDaTcpYZDLBMOATYkG19o2gjPsWqqp0is5q3RSzQVrp8pj0s5us19VDokQBAbh5Mf1mb6j/m1dHDfrd4HFxz+lvj+lNWrj8bL9bJ+Iqg/wCpfFfM60X0N8E8jgusTYdzCaB9TNHTs2vdmfms+U49QWyKNZHoxNppqJmwxrI7Z59hvOl+G1DoYaCjp3up2NBe4OjaCRsbmQTynpsupVxSKxIo26DgYdPCkjp53/yXVr9Pwcldhc9dh4bPEY6yDzNYtOvYDjBPnD1hTJC+aCz0s5PnMxiqIqarvG67Ha+7/wCeRg/Jt+tv4viXfiaq2Hf2r4F/Gv6E8TsVmE4WZJC+vka8yPLmgsycSbj9HyrJ8NLlLeTT+PQ1x1NejERsKWsnb6mR0YwzD2VDX01W+oma1+qxz2WsRYmwaL5FbqaGnSS7H3X53FauqKx0KtljyWrb5rU1+ikc/GA57dRxq33be9raw28eQVRiqtXdd5ToytRuHWRbpkp+jI+VD9LT/VyfiC24n9bfBf0VsC+h/ihpK5p3Q7YoXUEPS9Jf2OL/AEdN6dZi7dV/l4fo8tQ//oaO13kp81UtK3DqM1rHyR6seqGa19bU6COK6PWJIGdKmjQZRtqFq5OgWy6dfiYb4Xg/N5/9zxKr0lFurzLvRYnvpy9CaOPgdisZpWuZDqOs11762ob7SUp1jWpTo9Via1JUoVSZbuv+zZqSsohWTsYGxVpcQXyNPCdb5Jv1ZCxV5r4emciaHHKkiqlp2udpj7tniaVphSVjZd0qyZG3O5yNHxQB4mj5HFkc+tcyrZMj7yaezs9ju4dLTLHkw6F2pt9/mo62iJ/11N9Z/wASsKT+9vj+jZiH+V/h+za9I6nDW1MgqYZXzcHXc3Xt5otscOKyv1DqZJF6RNP5ORRsrlhRYnIjdmr0Mcyrwe4tBNe4t+k23y+UtKPo76GrzLKxYlbS9OXobHiH7VovqJ/Yrr/9LPBTmQ/4Zf8AuaaBpX+vVX1p9gXJqv7neJ6Kg/zM8DE3VcuG6aWfsvDf/F/6SulU/wCaP8eRw8P/ANs35/8AY0tc07gQEQGT0cxk0U4nDddpBa9l7XaeQ8otdb6edYX5RVrKVKmLIVbbUNhnxXCZXGR9NKHuJLrNcMztya6ytrNSOW6tOc2mxFiZLZEsnzsOGStwjVOrTzB1jbz9tsvlLFZKPY3zM0ixK+l6cvQ6mi2OQ0Uc0hY+Sqe0hnBbqNA2C975nM5cQWulnZC1VVLuU211JLUva29mJr7fnYdE6S1hz+FS58jgB7Fr61NvqWOoU320O5hGltRFMySWaSeIEh8biDdpHF0jb2LZFWSNeiuddDTUYbDJGrWNRF2Kd6i0hpYa6SsjZKI5YzrM1GgiUuBJGew2v1lbGVMTJlkRFsvmV5aKokpWwuVLovbs4Gr1kwfLJIL2fI9wvtsXE5+lUXrdyr2qdaNqtYjV2Ih3tGcSZS1UdRIHFjQ+4aAXcJpA29a200iRyI9SvXQOngWNutbeZ3cKqhNizJmghslS5zQ7I2IO1bYnI+qRybV/RoqI1joFYutG2Nz0t0YdXPie2ZsW5tcCHMLr3IPERyLo1VIsyoqLaxxMPxBtK1yK29+8wX5upedR9y7xKrmx2/y9zoZ9Z9tePsfcHk6drDdKppZcawZCQ4jjAJdl15qUwzT/ACdo8DF2Opb+Menx9jk8omLRiJlDE4OcHNMgab6rGjgtPTex7OlTiEzclImr4mOD0z8tZ3p4d6rtOtFpLQvpoKapgll3JrRssNYC1xZwWKVUCxtY9t7Gx1BVNmdJE9Ev87Dj/KmEcyl/u8ax6Wj3PnEz6viX3U+fg6tPjNJDWxVNPDJFCyN4cy13F5BFxdx5RxrBs8LJkexLJY2vpamSmdHI5Fcqpbw4GGxutbPUzTsuGyP1m62ThkPcq070fIrk2l2liWKFsbtaIZzBNMXMZ8GrGfC4CLXdZzwOQ63njrz61ahrVRMmRLp84lCqwtHO6SBcl3L2OrHXUcNXDVU4mbGx5L4XMabCxHAdrdOw+la0fCyVHsvbs9DcsNTJTuiltdU0L66DpaSYi2pqZKiMODX6tg4AHJoH+FrqZUkkVyG+igdBCkbtaGNjdYg8hB9BWlNZZVLpY2rHNK2yVVNV07XXga4FsgDda5zGV+K6vTVaOka9mw5NLhqsgfFIv1dh2arHMLqHGaallErra9gcz06rrHrWx1RSvXKc3Sao6SvhTIZIlk1fFQ4hXYPzaY9B1/Eseko90z6HEt9OXoY7SrSFtZucUUe4wQjgNNrk2tewyFhkBmtNTUpLZGpZELNBQrT5Tnuu52swCqHQCAiEhAEAQBAVCAgCAIAgPqKQsIc1xa4bHNNiD0FSiqi3QhzUcllTQdr8rVHOJu+f71s6aTeXiaerQ7icEH5WqOcTd8/3p00m8vEdWh3E4IR+JzuFjPMRyGV/vULLIuty8SUp4k0oxOCHUWs3BAEAQBAEAQBARAEJCAIAgCAICIAgCAIAgCAqAIAhAQBAEAQBAEAQBAEAQBARCQgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgIgCAIAgKgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAiAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCA+6iMse9h2sc5p6wbf4UqllVCGuymo5NpxqCQgCAIAgCAIAgCAIAgCAqAiAIAgCAIAgCAIAgCAIAgCAEqCTP72Jfmv8AsFXOqOOdnCPtOz5QMIMFSZmj4qfhA8Qk+UP89qyrociTK2L5mvCalJYchV0t8tnoauqR1AgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgMxonhJq6mNlrxsIdKeIMHF2nJWKWHpZETZtKdfUpBCrtq6E8fY9l3McgXobHispTrYph0dVE6CVusx3YQeIg8RCxkjbI3JcbYJ3wvR7F0oeWY/ojUUriWtdPDxSMFyB/E0Zg+pcKejkjXQl0PV0mJwzpZVs7sX9GvKodIKSAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAICXUEmZwTRqoqyNSMsjO2Z41WAdHG7sVmGlklXQmjtKVTXw06fyW69ia/Y9VwHBY6KLcorkk3e8+c53Kfcu5BA2JuS08lVVT6l+W/wDHcZJbisEBHbECHlWnf6Z38w9i4dd9R63Cv60NVVE6oQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEBnNEv07f5me1WaX6yjiH9S/k9hi80dS9Ah4x2s+1JAQH/2Q==" title="Buy " />
+                                                </td>
+                                                <td style="width: 305px; text-align: center; vertical-align: top;">
+                                                    <p>Buy from CarDekho....</p>
+                                                    <p class="small">
+                                                                Return Policy : no
+                                                                <br />
+                                                                Cash on Delivery :no EMI
+                                                            </p>
+                                                </td>
+                                                <td style="min-width: 150px; text-align: center;">
+                                                    <p>{{cars.days1}}</p>
+                                                </td>
+                                                <td style="min-width: 175px;">
+                                                    <small class="">Rs. {{cars.price1}}+ FREE Shipping </small>
+                                                </td>
+                                                   <td>
+                                                       <a href="{{cars.link1}}" role="button" class="btn btn-success btn-large pull-right"> Buy here--  <b>{{cars.price1}}<b></a><br><br>
+                                                   </td>
+                                                   </tr>
+                                                     <tr>
+                                                       <td>
+                                                    <img width="120" height="60" data-original='https://santanderconsumerusa.com/wp-content/uploads/2014/05/05-01-scusa_best-auto-shopping-websites_itunes-apple_-com_.png' class="lazy" alt="edmunds" src="https://santanderconsumerusa.com/wp-content/uploads/2014/05/05-01-scusa_best-auto-shopping-websites_itunes-apple_-com_.png" title="Buy " />
+                                                </td>
+                                                <td style="width: 305px; text-align: center; vertical-align: top;">
+                                                    <p>Buy from Edmunds....</p>
+                                                    <p class="small">
+                                                               Return Policy : no
+                                                                <br />
+                                                              Cash on Delivery :no
+                                                  EMI is available
+                                                            </p>
+                                                </td>
+                                                <td style="min-width: 150px; text-align: center;">
+                                                    <p>{{cars.days2}} </p>
+                                                </td>
+                                                <td style="min-width: 175px;">
+                                                    <small class="">Rs. {{cars.price2}}+ Shipping charges</small>
+                                                </td>
+                                                   <td>
+                                                      <a href="{{cars.link2}}" role="button" class="btn btn-success btn-large pull-right"> Buy here--<b>{{cars.price2}}<b></a><br><br>
+                                                   </td>
+                                                   </tr>
+                                                   <tr> <td>
+                                                    <img width="120" height="60" data-original='https://cdn.i.haymarketmedia.asia/?n=campaign-india%2Fcontent%2F20160518004802574093_droom.png&h=570&w=855&q=100&v=20170226&c=1' class="lazy" alt="TRUEcar" src="https://cdn.i.haymarketmedia.asia/?n=campaign-india%2Fcontent%2F20160518004802574093_droom.png&h=570&w=855&q=100&v=20170226&c=1" title="Buy " />
+                                                </td>
+                                                <td style="width: 305px; text-align: center; vertical-align: top;">
+                                                    <p>Buy from Droom....</p>
+                                                    <p class="small">
+                                                                Return Policy : no
+                                                                <br />
+                                                        Cash on Delivery :no
+                                                  EMI is available
+                                                            </p>
+                                                </td>
+                                                <td style="min-width: 150px; text-align: center;">
+                                                    <p>{{cars.days3}} </p>
+                                                </td>
+                                                <td style="min-width: 175px;">
+                                                    <small class="">Rs. {{cars.price3}}+Shipping charges</small>
+                                                </td>
+                                                   <td>
+                                                       <a href="{{cars.link3}}" role="button" class="btn btn-success btn-large pull-right"> Buy here--<b>{{cars.price3}}<b></a><br><br>
+                                                   </td>
+                                                   </tr>
+                                               </table>
+                  <p>{{ cars.description }}</p>
+          <ul class="list-inline list-unstyled">
+  			<li><span><i class="fa fa-calendar"></i> {{cars.time}}, {{cars.date}} </span></li>
+            <li>|</li>
+
+            <span><i class="fa fa-map-marker"></i> {{ cars.location }}</span>
+            <li>|</li>
+                <span><i class="fa fa-money"> {{cars.price}}</i></span>
+            </li>
+			</ul>
+       </div>
+    </div>
+  </div>
+  {% endfor %}
+  <div class="pagination">
+    <span class="step-links">
+      {% for num in cars.paginator.page_range %}
+      {% ifequal num cars.number %}
+    <span class="current"><b>{{ num }}</b></span>
+      {% else %}
+      <a href="?page={{ num }}"> {{ num }}</a>
+      {% endifequal %}
+      {% endfor %}
+    </span>
+</div>
+
+</div>
+
+
+
+
+{% endblock %}

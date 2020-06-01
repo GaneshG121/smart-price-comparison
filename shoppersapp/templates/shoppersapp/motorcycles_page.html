@@ -1,0 +1,143 @@
+{% extends 'shoppersapp/base.html' %}
+{% block content %}
+
+<!-- bicycles navbar starts -->
+<div class="navigation" >
+  <nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'index'  %}" style="font-family: 'Lobster';">Save money through price Comparison</a>
+  </div>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav" style="font-size:25px;">
+          <li ><a href="{% url 'mobiles_page'  %}" data-toggle="tooltip" data-placement="bottom" title="mobile"><i class="fa fa-mobile"></i></a></a></li>
+          <li><a href="{% url 'motorcycles_page'  %}" data-toggle="tooltip" data-placement="bottom" title="motorcycle"><i class="fa fa-motorcycle"></i></a></li>
+          <li><a href="{% url 'laptops_page'  %}" data-toggle="tooltip" data-placement="bottom" title="laptop"><i class="fa fa-laptop"></i></a></li>
+          <li><a href="{% url 'cars_page'  %}" data-toggle="tooltip" data-placement="bottom" title="car"><i class="fa fa-car"></i></a></li>
+      </ul>
+      
+ </div>
+</form>
+      </div>
+  </div>
+</nav>
+
+</div>
+
+<!-- bicycles navbar end -->
+
+
+<div class="container" style="margin-top: 1cm;">
+{% for motorcycle in motorcycles %}
+   <div class="well">
+      <div class="media">
+  		<a class="pull-left" href="#">
+    		<img class="media-object" height="140" width="180"  src="{{ motorcycle.image }}">
+  		</a>
+  		<div class="media-body">
+,    		<h4 class="media-heading">{{ motorcycle.title }}</h4>
+                    <table>
+                                                   <tr>
+                                                       <td>
+                                                    <img width="120" height="60" data-original='https://pbs.twimg.com/profile_images/652461137498275840/zZ9EZgnq.jpg' class="lazy" alt="ZigWheels" src="https://pbs.twimg.com/profile_images/652461137498275840/zZ9EZgnq.jpg" title="Buy " />
+                                                </td>
+                                                <td style="width: 305px; text-align: center; vertical-align: top;">
+                                                    <p> ZigWHEELS</p>
+                                                    <p class="small">
+                                                                Return Policy : NO
+                                                                <br />
+                                                                 Book a test ride.
+                                                  EMI is available on all bank credit cards.
+                                                            </p>
+                                                </td>
+                                                <td style="min-width: 150px; text-align: center;">
+                                                    <p>{{motorcycle.days1}} Working Days </p>
+                                                </td>
+                                                <td style="min-width: 175px;">
+                                                    <small class="">Rs. {{motorcycle.price1}}+  Shipping Charges</small>
+                                                </td>
+                                                   <td>
+                                                       <a href="{{motorcycle.link1}}" role="button" class="btn btn-success btn-large pull-right">REGISTER HERE--<b>{{motorcycle.price1}}<b></a><br><br>
+                                                   </td>
+                                                   </tr>
+                                                     <tr>
+                                                       <td>
+                                                    <img width="120" height="60" data-original='http://cdn.marketplaceimages.windowsphone.com/v8/images/d86b3d61-0da2-4493-bfd9-ff62ef029be6?imageType=ws_icon_medium' class="lazy" alt="BIKEWALE" src="http://cdn.marketplaceimages.windowsphone.com/v8/images/d86b3d61-0da2-4493-bfd9-ff62ef029be6?imageType=ws_icon_medium" title="Buy " />
+                                                </td>
+                                                <td style="width: 305px; text-align: center; vertical-align: top;">
+                                                    <p>BIKEWALE</p>
+                                                    <p class="small">
+                                                                Return Policy : NO
+                                                                <br />
+                                                        EMI is available.
+                                                            </p>
+                                                </td>
+                                                <td style="min-width: 150px; text-align: center;">
+                                                    <p>{{motorcycle.days2}} Working Days </p>
+                                                </td>
+                                                <td style="min-width: 175px;">
+                                                    <small class="">Rs. {{motorcycle.price2}}+ Shipping charges</small>
+                                                </td>
+                                                   <td>
+                                                      <a href="{{motorcycle.link2}}" role="button" class="btn btn-success btn-large pull-right">REGISTER HERE--<b>{{motorcycle.price2}}<b></a><br><br>
+                                                   </td>
+                                                   </tr>
+                                                   <tr> <td>
+                                                    <img width="120" height="60" data-original='https://cdn.dribbble.com/users/723290/screenshots/3912460/bikedekho_1.png' class="lazy" alt="Paytm mall" src="https://cdn.dribbble.com/users/723290/screenshots/3912460/bikedekho_1.png" title="Buy " />
+                                                </td>
+                                                <td style="width: 305px; text-align: center; vertical-align: top;">
+                                                    <p>BIKEDEKHO</p>
+                                                    <p class="small">
+                                                                Return Policy : no
+                                                                <br />
+                                                                Get Loans;EMI is available
+                                                            </p>
+                                                </td>
+                                                <td style="min-width: 150px; text-align: center;">
+                                                    <p>{{motorcycle.days3}} Working Days </p>
+                                                </td>
+                                                <td style="min-width: 175px;">
+                                                    <small class="">Rs. {{motorcycle.price3}}+ Shipping Charges</small>
+                                                </td>
+                                                   <td>
+                                                       <a href="{{motorcycle.link3}}" role="button" class="btn btn-success btn-large pull-right">REGISTER HERE--<b>{{motorcycle.price3}}<b></a><br><br>
+                                                   </td>
+                                                   </tr>
+                                               </table>
+            <p>{{ motorcycle.description }}</p>
+          <ul class="list-inline list-unstyled">
+  			<li><span><i class="fa fa-calendar"></i> {{motorcycle.time}}, {{motorcycle.date}} </span></li>
+            <li>|</li>
+            <span><i class="fa fa-map-marker"></i> {{ motorcycle.location }}</span>
+            <li>|</li>
+
+              <span><i class="fa fa-money"> {{motorcycle.price}}</i></span>
+            </li>
+			</ul>
+       </div>
+    </div>
+  </div>
+  {% endfor %}
+  <div class="pagination">
+    <span class="step-links">
+      {% for num in motorcycles.paginator.page_range %}
+      {% ifequal num motorcycles.number %}
+    <span class="current"><b>{{ num }}</b></span>
+      {% else %}
+      <a href="?page={{ num }}"> {{ num }}</a>
+      {% endifequal %}
+      {% endfor %}
+    </span>
+</div>
+
+</div>
+
+
+
+
+{% endblock %}
