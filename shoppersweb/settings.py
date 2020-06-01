@@ -27,8 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['smart-price-comparison.herokuapp.com']
 
-import os
-import django_heroku
+
+
 HAYSTACK_CONNECTIONS = {
     'default': {
         'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
@@ -132,5 +132,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-django_heroku.settings(locals())
