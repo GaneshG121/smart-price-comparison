@@ -20,15 +20,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '1058@#m0g_)sgt%boep37r6$t@(*ehffbs8!ycalfn3#!_@9gr'
+SECRET_KEY = '74eb6135913e3e51a14385081cc293466f57790cbe5b7016'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['smart-price-comparison.herokuapp.com']
 
-import os
+
+
 HAYSTACK_CONNECTIONS = {
     'default': {
         'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
